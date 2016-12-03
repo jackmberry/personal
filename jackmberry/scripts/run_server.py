@@ -4,7 +4,6 @@ import cherrypy
 import os
 import sys
 import simplejson as json
-import get_images
 from bson import ObjectId
 
 class App( object ):
