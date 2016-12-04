@@ -39,7 +39,7 @@
 				<div class="vertical-center">
 					<h2>DevOps</h2>
 					<p>Blending Development, Quality Assurance and Operations.</p>
-					<h3>More Info<h3>
+					<h3><div id="myBtn1">More Info</div></h3>	
 				</div>
 			</div>
 		</section>
@@ -48,7 +48,7 @@
 				<div class="vertical-center">
 					<h2>Software Development</h2>
 					<p>C#, Python, SQL and Javascript</p>
-					<h3>More Info<h3>
+					<h3><div id="myBtn2">More Info</div></h3>	
 				</div>
 			</div>
 		</section>
@@ -56,10 +56,8 @@
 			<div class="inner">
 				<div class="vertical-center">
 					<h2>Life</h2>
-					<p>Volunteering, Sport and Adventure</p>
-					
-					
-					<h3><div id="myBtn">More Info</div></h3>		
+					<p>Volunteering, Sport and Adventure</p>	
+					<h3><div id="myBtn3">More Info</div></h3>	
 				</div>
 			</div>
 			<!-- The Modal -->
@@ -67,15 +65,15 @@
 
   <!-- Modal content -->
   <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">×</span>
+    <span class="close">×&nbsp;</span>
+    <div class="modal-header" id="modalHeader">
       <h2>Modal Header</h2>
     </div>
-    <div class="modal-body">
+    <div class="modal-body" id="modalBodies">
       <p>Some text in the Modal Body</p>
       <p>Some other text...</p>
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer" id="modalFooter">
       <h3>Modal Footer</h3>
     </div>
   </div>
@@ -93,14 +91,37 @@
 var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn1 = document.getElementById("myBtn1");
+var btn2 = document.getElementById("myBtn2");
+var btn3 = document.getElementById("myBtn3");
+
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+btn1.onclick = function() {
     modal.style.display = "block";
+    document.getElementById("modalHeader").innerHTML = "<h2>DevOps</h2>";
+    document.getElementById("modalBodies").innerHTML = "<p>Here's something about devops</p>" + " <p>Here's some other text about it...</p>";
+    document.getElementById("modalFooter").innerHTML = "<h3>Wanna know more... google it</h3>";
+    
+}
+
+btn2.onclick = function() {
+    modal.style.display = "block";
+    document.getElementById("modalHeader").innerHTML = "<h2>Software Development</h2>";
+    document.getElementById("modalBodies").innerHTML = "<p>Here's something about C#</p>" + " <p>Here's some text about python</p>" + " <p>Here's some text about SQL</p>" + " <p>Here's some text about javascript</p>";
+    document.getElementById("modalFooter").innerHTML = "<h3>Wanna know more... google it</h3>";
+    
+}
+
+btn3.onclick = function() {
+    modal.style.display = "block";
+    document.getElementById("modalHeader").innerHTML = "<h2>Life</h2>";
+    document.getElementById("modalBodies").innerHTML = "<p>Here's something about Scouts</p>" + " <p>Here's some text about Sport</p>" + " <p>Here's some text about Adventure</p>" + " <p>Here's some text about Puzzles</p>";
+    document.getElementById("modalFooter").innerHTML = "<h3>Wanna know more... google it</h3>";
+    
 }
 
 // When the user clicks on <span> (x), close the modal
